@@ -1,0 +1,59 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.parallax {
+     height: 10vh; 
+    position: relative;
+}
+
+header {
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0; /* Make sure header is at the top */
+    z-index: 1000; /* Ensure header stays on top of other content */
+}
+
+
+
+
+.typewriter {
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(30, end);
+    padding-top: 20px; /* Adjust spacing as needed */
+    position: relative; /* Ensure it can be positioned properly */
+    opacity: 0; /* Initial state to ensure smooth AOS transition */
+    transform: translateY(50px); /* Start position for animation */
+    transition: opacity 1s, transform 1s; /* Smooth transition */
+}
+
+/* AOS animation is handled automatically, but ensure your CSS supports it */
+[data-aos="fade-up"] {
+    opacity: 1;
+    transform: translateY(0); /* Move to the original position */
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}

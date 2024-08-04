@@ -1,0 +1,40 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Center vertically */
+    font-family: sans-serif;
+}
+
+/* CSS for styling the page and button */
+body {
+    margin: 0;
+    padding: 0;
+    height: 2000px; /* Just to make sure there is enough content to scroll */
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0048ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    font-size: 16px;
+    z-index: 1000; /* Ensures the button is above other content */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+.typewriter {
+    overflow: hidden; 
+    margin: 0 auto; 
+    text-align: center; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(30, end);
+  }

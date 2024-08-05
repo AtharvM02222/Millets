@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishes</title>
+    <link rel="stylesheet" href="styles2.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .recipe-container {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .recipe-container:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .collapsible {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            padding: 14px 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .collapsible:hover {
+            background-color: #0056b3;
+        }
+        
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+        }
+        
+        .collapsible.active:after {
+            content: "\2212";
+        }
+        
+        .content {
+            padding: 0 20px 20px;
+            display: none;
+            overflow: hidden;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        
+        h3 {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #007bff;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            background: #f4f4f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        
+        ol {
+            padding-left: 20px;
+        }
+        
+        p {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .container_new {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .videos {
+            width: 70%;
+        }
+        
+        .recipes {
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recipes h2 {
+            margin-top: 0;
+        }
+        
+        .event-item-video {
+            margin-bottom: 20px;
+        }
+        
+        .event-item-video img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .collapsible {
+            background-color: #fdfdfd;
+            color: #333;
+            cursor: pointer;
+            padding: 14px 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .collapsible:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .collapsible:after {
+            content: '\002B';
+            color: #333;
+            font-weight: bold;
+            float: right;
+        }
+        
+        .collapsible.active:after {
+            content: "\2212";
+        }
+        
+        .content {
+            padding: 0 20px 20px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .photo-gallery-container {
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 0.7fr);
+    margin: 20px 0;
+    width: max-content; /* Add this line to ensure the gallery is centered */
+}
+
+.photo-gallery img {
+    width: 80%;
+    height: auto; /* Adjust height to auto */
+    border-radius: 15px;
+}
+
+
+    </style>
+</head>
+<body>
+    <section id="section0" style="background-color: #FDFDFD" data-aos="fade-up" data-aos-duration="1500">
+        <br>
+        <div style="background-color: #FDFDFD;">
+        <img src="resources/filler1.jpg" style="height: 50px; padding-left: 0px">
+        <a class="button0" data-aos="fade-up" data-aos-duration="1000">
+            <button style="background-color: #FDFDFD; color: black; border-width: 0px; 
+            font-size: 28px; height: 50px; padding-right: 50px; padding-left: 30px" title="learn about millets">
+            MILLETS</button>
+        </a>
+        <a class="button1" href="home_page.html" data-aos="fade-up" data-aos-duration="1000">
+            <button style="background-color: #FDFDFD; color: black; border-width: 0px; 
+            font-size: 25px; height: 50px; width: 150px" title="takes you to home">
+            Home</button>
+        </a>
+        <a class="button2" href="history.html" data-aos="fade-up" data-aos-duration="1000">
+            <button style="background-color: #FDFDFD; color: black; border-width: 0px;
+             font-size: 25px; height: 50px; width: 150px" title="know about history of millets">
+            History</button>
+        </a>
+        <a class="button3" href="dishes.html" data-aos="fade-up" data-aos-duration="1000">
+            <button style="background-color: #FDFDFD; color: black; border-width: 0px; 
+            font-size: 25px; height: 50px; width: 150px" title="know about millet dishes">
+            Dishes</button>
+        </a>
+        <a class="button4" href="health benefits.html" data-aos="fade-up" data-aos-duration="1000">
+            <button style="background-color: #FDFDFD; color: black; border-width: 0px; 
+            font-size: 25px; height: 50px; width: 150px" title="know health benefits of millets">
+            Health</button>
+        </a>
+        <a class="button5" href="types.html" data-aos="fade-up" data-aos-duration="1000">
+            <button style="background-color: #FDFDFD; color: black; border-width: 0px; 
+            font-size: 25px; height: 50px; width: 150px" title="know health benefits of millets">
+            Types</button>
+        </a>
+        <a class="button6" href="sdg.html" data-aos="fade-up" data-aos-duration="1000">
+            <button style="background-color: #FDFDFD; color: black; border-width: 0px; 
+            font-size: 25px; height: 50px; width: 150px" title="know health benefits of millets">
+            SDG</button>
+        </a>
+        <a class="button7" href="government.html" data-aos="fade-up" data-aos-duration="1000">
+            <button style="background-color: #FDFDFD; color: black; border-width: 0px; 
+            font-size: 25px; height: 50px; width: 200px" title="know health benefits of millets">
+            Government</button>
+        </a>
+    </div>
+    </section>
+    <div class="event-wrapper event-color-six full-width">
+        <div class="container_new">
+            <div class="videos">
+                <div class="info-heading-area">
+                    <div class="info-heading">Millets <strong>Videos</strong></div>
+                </div>
+                <div class="event-item-area">
+                    <div class="event-item-video">
+                        <a href="https://www.youtube.com/watch?v=D8gvBYgBSnE" target="_blank" class="jquery-once-1-processed">
+                            <img src="https://static.mygov.in/static/s3fs-public/mygov_168907157050183151.png" alt="video" title="video">
+                        </a>
+                    </div>
+                    <div class="event-item-video">
+                        <a href="https://www.youtube.com/shorts/49mppzWhlqE" target="_blank" class="jquery-once-1-processed">
+                            <img src="https://static.mygov.in/static/s3fs-public/mygov_168907161550183151.png" alt="video" title="video">
+                        </a>
+                    </div>
+                    <div class="event-item-video">
+                        <a href="https://www.youtube.com/watch?v=V5dF_hrpjGw" target="_blank" class="jquery-once-1-processed">
+                            <img src="https://static.mygov.in/static/s3fs-public/mygov_168907171250183151.png" alt="video" title="video">
+                        </a>
+                    </div>
+                    <div class="event-item-video">
+                        <a href="https://www.youtube.com/watch?v=niKUAoxC8mc" target="_blank" class="jquery-once-1-processed">
+                            <img src="https://static.mygov.in/static/s3fs-public/mygov_168933590650183151.png" alt="video" title="video">
+                        </a>
+                    </div>
+                    <div class="event-item-video">
+                        <a href="https://www.youtube.com/shorts/kMtfK29pr5g" target="_blank" class="jquery-once-1-processed">
+                            <img src="https://static.mygov.in/static/s3fs-public/mygov_168933593450183151.png" alt="video" title="video">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="photo-gallery-container">
+                <div class="photo-gallery">
+                    <img src="resources/recipe11.png" alt="Recipe Photo 11">
+                    <img src="resources/recipe1.png" alt="Recipe Photo 1">
+                    <img src="resources/recipe2.png" alt="Recipe Photo 2">
+                    <img src="resources/recipe3.png" alt="Recipe Photo 3">
+                    <img src="resources/recipe4.png" alt="Recipe Photo 4">
+                    <img src="resources/recipe5.png" alt="Recipe Photo 5">
+                    <img src="resources/recipe6.png" alt="Recipe Photo 6">
+                    <img src="resources/recipe7.png" alt="Recipe Photo 7">
+                    <img src="resources/recipe8.png" alt="Recipe Photo 8">
+                    <img src="resources/recipe9.png" alt="Recipe Photo 9">
+                    <img src="resources/recipe10.png" alt="Recipe Photo 10">
+                </div>
+            </div>
+            
+            
+
+            <div class="recipes">
+                <h2>Recipes</h2>
+                <p>Enjoy Delicious Millet Dishes!</p>
+                <div style="margin-top: 20px;">
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Porridge</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet</li>
+                                <li>2 cups water</li>
+                                <li>2 cups milk (or a dairy-free alternative)</li>
+                                <li>1/4 cup honey or maple syrup</li>
+                                <li>1 tsp vanilla extract</li>
+                                <li>Fresh fruit, nuts, and seeds for topping</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Rinse the millet thoroughly under cold water.</li>
+                                <li>In a saucepan, bring water and millet to a boil.</li>
+                                <li>Reduce the heat and simmer for about 20 minutes, until the millet is tender and the water is absorbed.</li>
+                                <li>Add the milk, sweetener, and vanilla extract. Cook for an additional 10 minutes, stirring occasionally.</li>
+                                <li>Serve warm, topped with fresh fruit, nuts, and seeds.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> This porridge is creamy and slightly nutty, with a mildly sweet flavor from the honey or maple syrup. The toppings add freshness and crunch.</p>
+                        </div>
+                    </div>
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Salad with Roasted Vegetables</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet</li>
+                                <li>2 cups vegetable broth</li>
+                                <li>1 red bell pepper, diced</li>
+                                <li>1 zucchini, diced</li>
+                                <li>1 red onion, chopped</li>
+                                <li>1 cup cherry tomatoes, halved</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>1/4 cup chopped fresh parsley</li>
+                                <li>1/4 cup crumbled feta cheese (optional)</li>
+                                <li>Juice of 1 lemon</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Preheat the oven to 400°F (200°C).</li>
+                                <li>Toss the bell pepper, zucchini, red onion, and cherry tomatoes with olive oil, salt, and pepper. Spread on a baking sheet and roast for 20-25 minutes.</li>
+                                <li>In a saucepan, bring the vegetable broth to a boil and add the millet. Reduce the heat, cover, and simmer for about 15 minutes until the millet is cooked.</li>
+                                <li>In a large bowl, combine the cooked millet, roasted vegetables, parsley, and feta cheese.</li>
+                                <li>Drizzle with lemon juice, and toss to combine.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> This salad is fresh and hearty, with a combination of sweet and savory flavors from the roasted vegetables and a bright, tangy kick from the lemon juice.</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible" >Millet Pilaf</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet</li>
+                                <li>2 cups chicken or vegetable broth</li>
+                                <li>1 onion, finely chopped</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>1 carrot, diced</li>
+                                <li>1 celery stalk, diced</li>
+                                <li>1/2 cup frozen peas</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Fresh parsley for garnish</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Rinse the millet under cold water.</li>
+                                <li>In a large pan, heat the olive oil over medium heat. Add the onion, garlic, carrot, and celery, and sauté until soft.</li>
+                                <li>Add the millet to the pan and toast for a few minutes until lightly browned.</li>
+                                <li>Pour in the broth, bring to a boil, then reduce the heat, cover, and simmer for about 20 minutes until the millet is tender and the liquid is absorbed.</li>
+                                <li>Stir in the frozen peas and cook for another 5 minutes.</li>
+                                <li>Season with salt and pepper and garnish with fresh parsley.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> This pilaf is savory and comforting, with a slightly nutty flavor from the millet and a mix of textures from the vegetables.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Bread</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>2 cups millet flour</li>
+                                <li>1 cup all-purpose flour</li>
+                                <li>2 tsp baking powder</li>
+                                <li>1/2 tsp baking soda</li>
+                                <li>1/2 tsp salt</li>
+                                <li>1 cup buttermilk (or dairy-free alternative)</li>
+                                <li>1/4 cup honey</li>
+                                <li>1/4 cup olive oil</li>
+                                <li>2 eggs</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Preheat the oven to 350°F (175°C) and grease a loaf pan.</li>
+                                <li>In a large bowl, combine the millet flour, all-purpose flour, baking powder, baking soda, and salt.</li>
+                                <li>In another bowl, whisk together the buttermilk, honey, olive oil, and eggs.</li>
+                                <li>Pour the wet ingredients into the dry ingredients and mix until just combined.</li>
+                                <li>Pour the batter into the prepared loaf pan and bake for 40-45 minutes, or until a toothpick inserted into the center comes out clean.</li>
+                                <li>Let cool before slicing.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet bread has a dense, slightly crumbly texture with a mild, nutty flavor. The honey adds a hint of sweetness, making it perfect for both sweet and savory toppings.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Upma</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet</li>
+                                <li>2 cups water</li>
+                                <li>1 onion, finely chopped</li>
+                                <li>1 carrot, diced</li>
+                                <li>1/2 cup green peas</li>
+                                <li>2 green chilies, chopped</li>
+                                <li>1 tsp mustard seeds</li>
+                                <li>1 tsp cumin seeds</li>
+                                <li>1 tsp urad dal (split black gram)</li>
+                                <li>1 tsp chana dal (split chickpeas)</li>
+                                <li>A few curry leaves</li>
+                                <li>2 tbsp oil</li>
+                                <li>Salt to taste</li>
+                                <li>Fresh cilantro for garnish</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Dry roast the millet in a pan until it turns golden brown. Set aside.</li>
+                                <li>In a pan, heat oil and add mustard seeds, cumin seeds, urad dal, chana dal, and curry leaves. Sauté until the seeds crackle.</li>
+                                <li>Add chopped onions and green chilies. Sauté until the onions turn translucent.</li>
+                                <li>Add the diced carrot and green peas. Cook for a few minutes.</li>
+                                <li>Add the roasted millet and mix well.</li>
+                                <li>Pour in the water and add salt to taste. Bring to a boil.</li>
+                                <li>Reduce the heat, cover, and cook until the millet is tender and the water is absorbed.</li>
+                                <li>Garnish with fresh cilantro and serve hot.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet upma is a savory, spiced dish with a comforting, slightly crunchy texture from the roasted millet and dals, and a fresh aroma from the curry leaves and cilantro.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Risotto</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet</li>
+                                <li>4 cups vegetable broth</li>
+                                <li>1 onion, finely chopped</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>1 cup mushrooms, sliced</li>
+                                <li>1/2 cup grated Parmesan cheese (or vegan alternative)</li>
+                                <li>1/2 cup white wine (optional)</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Fresh parsley for garnish</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>In a saucepan, bring the vegetable broth to a simmer.</li>
+                                <li>In a large pan, heat the olive oil and sauté the onions and garlic until soft.</li>
+                                <li>Add the mushrooms and cook until they release their moisture and start to brown.</li>
+                                <li>Add the millet to the pan and toast for a few minutes.</li>
+                                <li>Pour in the white wine (if using) and cook until it evaporates.</li>
+                                <li>Gradually add the simmering broth, one ladleful at a time, stirring frequently until the liquid is absorbed before adding more.</li>
+                                <li>Continue this process until the millet is tender and creamy.</li>
+                                <li>Stir in the grated Parmesan cheese and season with salt and pepper.</li>
+                                <li>Garnish with fresh parsley and serve hot.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet risotto is creamy and rich, with earthy flavors from the mushrooms and a slight tang from the Parmesan cheese. The millet adds a pleasant, slightly nutty texture.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Stuffed Peppers</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>4 bell peppers, tops cut off and seeds removed</li>
+                                <li>1 cup cooked millet</li>
+                                <li>1 can black beans, drained and rinsed</li>
+                                <li>1 cup corn kernels</li>
+                                <li>1 onion, chopped</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>1 tsp cumin</li>
+                                <li>1 tsp paprika</li>
+                                <li>1 cup shredded cheese (optional)</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Fresh cilantro for garnish</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Preheat the oven to 375°F (190°C).</li>
+                                <li>In a pan, heat olive oil and sauté the onion and garlic until soft.</li>
+                                <li>Add the black beans, corn, cumin, paprika, salt, and pepper. Cook for a few minutes.</li>
+                                <li>Stir in the cooked millet and mix well.</li>
+                                <li>Stuff the bell peppers with the millet mixture and place them in a baking dish.</li>
+                                <li>Top with shredded cheese if using.</li>
+                                <li>Cover the dish with foil and bake for 30 minutes. Remove the foil and bake for an additional 10 minutes until the peppers are tender and the cheese is melted.</li>
+                                <li>Garnish with fresh cilantro and serve hot.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> These stuffed peppers are hearty and flavorful, with a satisfying mix of textures from the millet, beans, and corn. The spices add a warm, smoky note, and the cheese (if used) adds a creamy, rich finish.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Salad</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup cooked millet</li>
+                                <li>1 cucumber, diced</li>
+                                <li>1 bell pepper, diced</li>
+                                <li>1/2 red onion, finely chopped</li>
+                                <li>1 cup cherry tomatoes, halved</li>
+                                <li>1/4 cup chopped fresh parsley</li>
+                                <li>1/4 cup crumbled feta cheese (optional)</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>2 tbsp lemon juice</li>
+                                <li>Salt and pepper to taste</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>In a large bowl, combine the cooked millet, cucumber, bell pepper, red onion, cherry tomatoes, and parsley.</li>
+                                <li>In a small bowl, whisk together the olive oil, lemon juice, salt, and pepper.</li>
+                                <li>Pour the dressing over the salad and toss to combine.</li>
+                                <li>Top with crumbled feta cheese if using.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> This millet salad is light and refreshing, with a crisp texture from the fresh vegetables and a bright, tangy flavor from the lemon dressing. The feta cheese adds a salty, creamy element.</p>
+                        </div>
+                    </div>
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Porridge</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet</li>
+                                <li>3 cups water</li>
+                                <li>1 cup milk (or dairy-free alternative)</li>
+                                <li>1/4 cup honey or maple syrup</li>
+                                <li>1 tsp vanilla extract</li>
+                                <li>1/2 tsp ground cinnamon</li>
+                                <li>Fresh fruit and nuts for topping</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Rinse the millet under cold water.</li>
+                                <li>In a large saucepan, bring the water to a boil. Add the millet, reduce the heat, cover, and simmer for about 20 minutes until the millet is tender and the water is absorbed.</li>
+                                <li>Add the milk, honey, vanilla extract, and cinnamon to the cooked millet. Stir well and cook for another 5-10 minutes until the porridge reaches your desired consistency.</li>
+                                <li>Serve hot, topped with fresh fruit and nuts.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet porridge is creamy and mildly sweet, with a warm, comforting flavor from the cinnamon and vanilla. The fresh fruit and nuts add a burst of freshness and crunch.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Pancakes</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet flour</li>
+                                <li>1 cup all-purpose flour</li>
+                                <li>2 tbsp sugar</li>
+                                <li>1 tbsp baking powder</li>
+                                <li>1/2 tsp salt</li>
+                                <li>1 1/4 cups milk (or dairy-free alternative)</li>
+                                <li>1 egg</li>
+                                <li>2 tbsp melted butter or oil</li>
+                                <li>1 tsp vanilla extract</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>In a large bowl, combine the millet flour, all-purpose flour, sugar, baking powder, and salt.</li>
+                                <li>In another bowl, whisk together the milk, egg, melted butter, and vanilla extract.</li>
+                                <li>Pour the wet ingredients into the dry ingredients and mix until just combined. Do not overmix.</li>
+                                <li>Heat a non-stick skillet over medium heat and lightly grease it with butter or oil.</li>
+                                <li>Pour 1/4 cup of batter onto the skillet for each pancake. Cook until bubbles form on the surface, then flip and cook until golden brown on the other side.</li>
+                                <li>Serve hot with your favorite toppings.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet pancakes are light and fluffy with a slightly nutty flavor. They pair well with both sweet and savory toppings, making them a versatile breakfast option.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Cookies</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet flour</li>
+                                <li>1 cup all-purpose flour</li>
+                                <li>1/2 cup sugar</li>
+                                <li>1/2 cup brown sugar</li>
+                                <li>1/2 tsp baking soda</li>
+                                <li>1/2 tsp salt</li>
+                                <li>1 cup butter, softened</li>
+                                <li>1 egg</li>
+                                <li>1 tsp vanilla extract</li>
+                                <li>1 cup chocolate chips</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Preheat the oven to 350°F (175°C) and line a baking sheet with parchment paper.</li>
+                                <li>In a bowl, combine the millet flour, all-purpose flour, baking soda, and salt.</li>
+                                <li>In another bowl, cream together the butter, sugar, and brown sugar until light and fluffy.</li>
+                                <li>Beat in the egg and vanilla extract.</li>
+                                <li>Gradually add the dry ingredients to the wet ingredients, mixing until just combined.</li>
+                                <li>Fold in the chocolate chips.</li>
+                                <li>Drop spoonfuls of dough onto the prepared baking sheet, spacing them about 2 inches apart.</li>
+                                <li>Bake for 10-12 minutes, or until the edges are golden brown.</li>
+                                <li>Let cool on the baking sheet for a few minutes before transferring to a wire rack to cool completely.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet cookies are crisp on the outside and chewy on the inside, with a delightful nutty flavor from the millet flour. The chocolate chips add a rich, sweet contrast.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Soup</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet</li>
+                                <li>6 cups vegetable broth</li>
+                                <li>1 onion, chopped</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>2 carrots, diced</li>
+                                <li>2 celery stalks, diced</li>
+                                <li>1 cup diced tomatoes</li>
+                                <li>1 tsp dried thyme</li>
+                                <li>1 tsp dried oregano</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Fresh parsley for garnish</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Rinse the millet under cold water.</li>
+                                <li>In a large pot, heat the olive oil and sauté the onion and garlic until soft.</li>
+                                <li>Add the carrots and celery and cook for a few minutes.</li>
+                                <li>Stir in the millet, vegetable broth, diced tomatoes, thyme, and oregano.</li>
+                                <li>Bring to a boil, then reduce the heat, cover, and simmer for about 30 minutes until the millet is tender.</li>
+                                <li>Season with salt and pepper.</li>
+                                <li>Garnish with fresh parsley and serve hot.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet soup is hearty and nourishing, with a rich vegetable broth and a blend of aromatic herbs. The millet adds a satisfying, slightly chewy texture.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Stir-Fry</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup cooked millet</li>
+                                <li>1 bell pepper, sliced</li>
+                                <li>1 carrot, julienned</li>
+                                <li>1 cup broccoli florets</li>
+                                <li>1 onion, sliced</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>2 tbsp soy sauce</li>
+                                <li>1 tbsp sesame oil</li>
+                                <li>1 tbsp olive oil</li>
+                                <li>1 tsp grated ginger</li>
+                                <li>1/4 cup chopped green onions</li>
+                                <li>Sesame seeds for garnish</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Heat the olive oil and sesame oil in a large pan over medium heat.</li>
+                                <li>Add the garlic and ginger and sauté until fragrant.</li>
+                                <li>Add the onion, bell pepper, carrot, and broccoli. Stir-fry for a few minutes until the vegetables are tender-crisp.</li>
+                                <li>Stir in the cooked millet and soy sauce. Cook for another 2-3 minutes until heated through.</li>
+                                <li>Garnish with chopped green onions and sesame seeds.</li>
+                                <li>Serve hot.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet stir-fry is a vibrant and flavorful dish, with a mix of crunchy vegetables and a savory, slightly nutty millet base. The ginger and garlic add a fragrant, spicy kick.</p>
+                        </div>
+                    </div>
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Salad</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup cooked millet</li>
+                                <li>1 cucumber, diced</li>
+                                <li>1 tomato, diced</li>
+                                <li>1/4 cup red onion, finely chopped</li>
+                                <li>1/4 cup crumbled feta cheese</li>
+                                <li>1/4 cup chopped fresh parsley</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>1 tbsp lemon juice</li>
+                                <li>Salt and pepper to taste</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>In a large bowl, combine the cooked millet, cucumber, tomato, red onion, feta cheese, and parsley.</li>
+                                <li>In a small bowl, whisk together the olive oil, lemon juice, salt, and pepper.</li>
+                                <li>Pour the dressing over the salad and toss to combine.</li>
+                                <li>Serve chilled or at room temperature.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet salad is fresh and light, with a mix of crunchy vegetables and a tangy, lemony dressing. The feta cheese adds a creamy, salty contrast.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Burger Patties</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup cooked millet</li>
+                                <li>1/2 cup mashed chickpeas</li>
+                                <li>1/4 cup grated carrot</li>
+                                <li>1/4 cup finely chopped onion</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>1 tsp ground cumin</li>
+                                <li>1/2 tsp smoked paprika</li>
+                                <li>1 egg, beaten</li>
+                                <li>1/4 cup breadcrumbs</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Olive oil for frying</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>In a large bowl, combine the cooked millet, mashed chickpeas, grated carrot, onion, garlic, cumin, smoked paprika, egg, breadcrumbs, salt, and pepper.</li>
+                                <li>Mix well until all ingredients are thoroughly combined.</li>
+                                <li>Shape the mixture into patties.</li>
+                                <li>Heat olive oil in a skillet over medium heat.</li>
+                                <li>Fry the patties for 4-5 minutes on each side until golden brown and crispy.</li>
+                                <li>Serve on buns with your favorite toppings.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet burger patties are hearty and flavorful, with a blend of spices and a crispy exterior. The chickpeas add a creamy texture and extra protein.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Pilaf</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>1 cup millet</li>
+                                <li>2 cups vegetable broth</li>
+                                <li>1 onion, finely chopped</li>
+                                <li>1 carrot, diced</li>
+                                <li>1 bell pepper, diced</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>1/4 cup dried cranberries</li>
+                                <li>1/4 cup chopped almonds</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Fresh parsley for garnish</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Rinse the millet under cold water.</li>
+                                <li>In a large pan, heat the olive oil and sauté the onion and garlic until soft.</li>
+                                <li>Add the carrot and bell pepper and cook for a few minutes.</li>
+                                <li>Stir in the millet and vegetable broth.</li>
+                                <li>Bring to a boil, then reduce the heat, cover, and simmer for about 20 minutes until the millet is tender and the liquid is absorbed.</li>
+                                <li>Stir in the dried cranberries and chopped almonds.</li>
+                                <li>Season with salt and pepper.</li>
+                                <li>Garnish with fresh parsley and serve hot.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet pilaf is a savory and slightly sweet dish, with tender vegetables, crunchy almonds, and a hint of tartness from the cranberries. The millet adds a fluffy, hearty base.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-container">
+                        <button class="collapsible">Millet Stuffed Fritters</button>
+                        <div class="content">
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <li>4 bell peppers</li>
+                                <li>1 cup cooked millet</li>
+                                <li>1 cup black beans, rinsed and drained</li>
+                                <li>1 cup corn kernels</li>
+                                <li>1/2 cup diced tomatoes</li>
+                                <li>1/4 cup chopped cilantro</li>
+                                <li>1 tsp ground cumin</li>
+                                <li>1/2 tsp smoked paprika</li>
+                                <li>1/2 cup shredded cheese (optional)</li>
+                                <li>Salt and pepper to taste</li>
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                <li>Preheat the oven to 375°F (190°C).</li>
+                                <li>Cut the tops off the bell peppers and remove the seeds and membranes.</li>
+                                <li>In a large bowl, combine the cooked millet, black beans, corn, diced tomatoes, cilantro, cumin, smoked paprika, salt, and pepper.</li>
+                                <li>Stuff the bell peppers with the millet mixture.</li>
+                                <li>Place the stuffed peppers in a baking dish.</li>
+                                <li>Top with shredded cheese if using.</li>
+                                <li>Bake for 25-30 minutes until the peppers are tender and the filling is heated through.</li>
+                                <li>Serve hot.</li>
+                            </ol>
+                            <p><strong>Taste:</strong> Millet stuffed peppers are vibrant and satisfying, with a mix of savory beans, sweet corn, and flavorful spices. The millet provides a wholesome, filling base, and the melted cheese adds a rich, creamy finish.</p>
+                        </div>
+                    </div>
+                    <!-- Repeat the above structure for other recipes -->
+            
+                </div>
+            
+                <script>
+                    var coll = document.getElementsByClassName("collapsible");
+                    for (var i = 0; i < coll.length; i++) {
+                        coll[i].addEventListener("click", function() {
+                            this.classList.toggle("active");
+                            var content = this.nextElementSibling;
+                            if (content.style.display === "block") {
+                                content.style.display = "none";
+                            } else {
+                                content.style.display = "block";
+                            }
+                        });
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+     <!-- Floating button -->
+<div id="chatButton"></div>
+
+<!-- Chat widget container -->
+<div id="myLandbot">
+  <!-- Landbot script -->
+  <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+  <script>
+    var myLandbot = new LandbotFrameWidget({
+      container: '#myLandbot',
+      index: 'https://landbot.online/v3/H-2571764-B4OTQID5SD2TV57E/index.html',
+    });
+  </script>
+</div>
+
+<!-- Floating button script -->
+<script>
+  // Handle button click to toggle chat widget
+  document.getElementById('chatButton').addEventListener('click', function() {
+    var chatButton = document.getElementById('chatButton');
+    var chatWidget = document.getElementById('myLandbot');
+
+    if (chatWidget.style.display === 'block') {
+      // If chat widget is visible, hide it
+      chatWidget.style.display = 'none';
+    } else {
+      // If chat widget is hidden, show it
+      chatWidget.style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>

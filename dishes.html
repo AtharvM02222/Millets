@@ -906,11 +906,11 @@
     </section>
 
     <section class="this is chatbot">
-        <!-- Floating button -->
+        <!--  -->
    <div id="chatButton">
      </div>
      
-     <!-- Chat widget container -->
+        <!--  -->
      <div id="myLandbot">
        <!-- Landbot script -->
        <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
@@ -921,10 +921,9 @@
          });
        </script>
      </div>
-     
-     <!-- Floating button script -->
+             <!--  -->
      <script>
-       // Handle button click to toggle chat widget
+        <!--  -->
        document.getElementById('chatButton').addEventListener('click', function() {
          var chatButton = document.getElementById('chatButton');
          var chatWidget = document.getElementById('myLandbot');
@@ -944,20 +943,20 @@
     <button id="scrollToTopBtn" data-aos="fade-up" data-aos-duration="1000">Scroll to Top</button>
 
     <script>
-        // JavaScript for scroll-to-top functionality
+        <!--  -->
         document.addEventListener('DOMContentLoaded', function() {
             var scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-            // Show or hide the button based on scroll position
+                    <!-- slider js  -->
             window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) { // Show button if scrolled down 100px
+                if (window.scrollY > 100) {         <!-- scroll yaxis -->
                     scrollToTopBtn.style.display = 'block';
                 } else {
                     scrollToTopBtn.style.display = 'none';
                 }
             });
 
-            // Scroll to top when the button is clicked
+        <!--  -->
             scrollToTopBtn.addEventListener('click', function() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });

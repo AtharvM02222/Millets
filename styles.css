@@ -6,6 +6,38 @@ body, html {
     align-items: center; /* Center vertically */
 }
 
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #084cfc;
+    z-index: 9999;
+}    
+
+.content {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    width: 100vw; 
+    height: 170vh; 
+    background-color: black;
+}     
+
+body.loaded .loading-overlay {
+    display: none;
+}
+
+body.loaded .content {
+    display: flex;
+}  
+
   .countdown {
     margin-top: 5vh;
     margin-bottom: 0vh;

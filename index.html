@@ -25,6 +25,59 @@
 
         <script src="utils.js"></script>
 
+        <div class="loading-overlay" id="loadingOverlay">
+        <dotlottie-player id="lottiePlayer" src="https://lottie.host/ff6dabe1-13fc-4759-b5b3-c9b1dfe92800/TwOR2y5hnC.json" 
+                          background="#084CFC" 
+                          speed="1" 
+                          style="width: 30vw; height: 30vh" 
+                          direction="1"
+                          autoplay loop>
+        </dotlottie-player>
+        </div>                                                                                                                                                                                                                  <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const loadingOverlay = document.getElementById('loadingOverlay');
+                const content = document.querySelector('.content');
+                const sidebar = document.getElementById('sidebar');
+        
+                function getAspectRatio() {
+                    const width = window.innerWidth;
+                    const height = window.innerHeight;
+                    return width / height;
+                }
+        
+                const MOBILE_MAX_ASPECT_RATIO = 1.33;
+                
+                function isNotMobileDevice() {
+                    const aspectRatio = getAspectRatio();
+                    return aspectRatio > MOBILE_MAX_ASPECT_RATIO;
+                }
+        
+                setTimeout(function() {
+                    loadingOverlay.style.display = 'none';
+                    content.style.display = 'flex';
+        
+                    if (isNotMobileDevice()) {
+                        sidebar.classList.add('open');
+                    } else {
+                        sidebar.classList.remove('open');
+                    }
+                }, 2000);
+        
+                function toggleSidebar() {
+                    sidebar.classList.toggle('open');
+                }
+        
+                function toggleDropdown() {
+                    const dropdownContent = document.getElementById('dropdownContent');
+                    dropdownContent.classList.toggle('show');
+                }
+        
+                window.toggleSidebar = toggleSidebar;
+                window.toggleDropdown = toggleDropdown;
+            });
+        </script>
+        
+        <div class="content">
         <section>
 
         <section class="title bar">
@@ -541,6 +594,8 @@ updateCountdown(); // Initial call
     });
   </script>
 </section>
+</section>
+</div>
 
 <!--<script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
 <div id="myLandbot" style="width: 100%; height: undefinedpx"></div>
